@@ -143,7 +143,7 @@ if args.mode == 'train':
     for i in range(args.nr_gpu):
         with tf.device('/gpu:%d' % i):
             grads.append(tf.gradients(pvaes[i].loss, all_params, colocate_gradients_with_ops=True))
-    with tf.device('/gpu:0'):
+    with tf.device('/gpu:%d' % i):
         for i in range(1, args.nr_gpu):
             for j in range(len(grads[0])):
                 grads[0][j] += grads[i][j]
