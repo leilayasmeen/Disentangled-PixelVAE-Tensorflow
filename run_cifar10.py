@@ -233,7 +233,7 @@ def generate_samples(sess, data, fill_region=None, mgen=None):
 initializer = tf.global_variables_initializer()
 saver = tf.train.Saver()
 
-config = tf.ConfigProto()
+config = tf.ConfigProto(allow_soft_placement=True, log_device_placement=True)
 config.gpu_options.allow_growth = True
 with tf.Session(config=config) as sess:
 
