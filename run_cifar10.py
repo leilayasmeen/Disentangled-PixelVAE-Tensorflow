@@ -4,8 +4,7 @@ import json
 import argparse
 import time
 import numpy as np
-#import tensorflow as tf
-import tensorflow-gpu as tf
+import tensorflow as tf
 from blocks.helpers import Recorder, visualize_samples, get_nonlinearity, int_shape, get_trainable_variables
 from blocks.optimizers import adam_updates
 import data.load_data as load_data
